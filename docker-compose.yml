@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: dehydrated-cloudflare
+    image: dehydrated-cloudflare:latest
+    ports:
+      - 80/tcp
+    volumes:
+      - ./dehydrated:/etc/dehydrated
+      - ./dehydrated-crontab:/etc/cron.d/dehydrated-crontab
+    restart: unless-stopped
